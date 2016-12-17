@@ -1,3 +1,4 @@
+import time
 import copy
 import readData as rd
 
@@ -7,8 +8,11 @@ states = {}
 lastRoundStates = {}
 lastRoundStates.update(initialState)
 
+startTime = time.time()
 
 for moves in range(maxMoves):
+	startRound = time.time()
+	
 	notRepeatedState = {}
 	newStates = {}
 
@@ -24,16 +28,21 @@ for moves in range(maxMoves):
 			
 			tmp1.append(j)
 			if '0' not in tmp2:
+				endTime = time.time()
 				print()
 				print("result > ",tmp1)
+				print()
+				print("result in : ", (endTime - startTime)*1000 , "ms")
 				exit(1)
 			
 			newStates.update({tmp2:tmp1})
 
 	states.update(lastRoundStates)
 	lastRoundStates= {}
-
-	print("number of old states: ",len(states)," number of new states: ",len(newStates))
+	
+	
+	endRound = time.time()
+	print("number of old states: ",len(states)," number of new states: ",len(newStates) , " time of this round : " , (endRound - startRound)*1000 , "ms")
 	
 	for i in newStates.keys():
 		if i in states.keys():
