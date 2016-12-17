@@ -54,6 +54,7 @@ for moves in range(maxMoves):
 		states.append(i)
 		
 	lastRoundStates= []
+
 	
 	
 	print("number of old states: ",len(states)," number of new states: ",len(newStates))
@@ -70,3 +71,6 @@ for moves in range(maxMoves):
 				
 		if isExist == 0:
 			lastRoundStates.append(newStates[i])
+			
+
+print("It can`t be finish under ",maxMoves," moves !!!")
