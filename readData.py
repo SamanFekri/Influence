@@ -13,7 +13,8 @@ def getData():
 					conncet[i][j] = 1
 		
 			print("Data file matrix:")
-			print(conncet)
+			for i in conncet[:]:
+				print(i)
 			print()
 			
 			initialState = {initial:[]}
