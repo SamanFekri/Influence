@@ -16,7 +16,7 @@ def getData():
 			print(conncet)
 			print()
 			
-			initialState = [initial,[]]
+			initialState = {initial:[]}
 			return initialState,conncet
 			
 	except:
