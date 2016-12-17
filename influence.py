@@ -43,6 +43,7 @@ for moves in range(maxMoves):
 	
 	endRound = time.time()
 	print("number of old states: ",len(states)," number of new states: ",len(newStates) , " time of this round : " , (endRound - startRound)*1000 , "ms")
+	print()
 	
 	for i in newStates.keys():
 		if i in states.keys():
